@@ -22,4 +22,4 @@ Pengembangan aplikasi E-Commerce Global. Tim tidak membangun seluruh fitur sekal
 ​Tahapan Analisis: Dilakukan secara bertahap mulai dari tingkat Basic, Intermediate, hingga Detail untuk meminimalkan kesalahan desain sebelum masuk ke tahap produksi.
 
 ​4. Visualisasi Proses
-​Pengembangan ini melibatkan Iterative Loop (proses berulang), di mana setiap siklus menghasilkan peningkatan kualitas sistem secara berkelanjutan hingga mencapai standar yang diinginkan.
+​Pengembangan ini melibatkan Iterative Loop (proses berulang), di mana setiap siklus menghasilkan peningkatan kualitas sistem secara berkelanjutan hingga mencapai standar yang yang diinginkan.
