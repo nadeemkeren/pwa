@@ -1,29 +1,26 @@
-
-****Narasi Kelayakan Proyek: Rekayasa Perangkat Lunak :****
+**Analisis Kelayakan Proyek: Implementasi LMS (Learning Management System)**
 
 **1. Point (Pernyataan Utama)**
-Status untuk proyek pengembangan sistem informasi ini adalah GO (Sangat Layak). Proyek ini bukan lagi sekadar pilihan, melainkan sebuah kebutuhan mendesak agar sistem kita tidak tertinggal jauh dari standar teknologi saat ini.
+Status untuk proyek implementasi LMS ini adalah GO (Sangat Layak). Di era digital saat ini, memiliki platform belajar terpusat adalah kebutuhan wajib untuk menjamin kualitas materi dan aksesibilitas bagi seluruh pengguna.
 
 **2. Reason (Alasan)**
-Alasan utamanya adalah karena infrastruktur perangkat lunak yang lama sudah mencapai batas maksimalnya (deprecated). Mempertahankan sistem lama hanya akan memperbesar biaya perbaikan dan risiko kegagalan sistem secara total, yang ujung-ujungnya bakal menghambat pertumbuhan bisnis kita.
+Alasan utamanya adalah sistem pembelajaran konvensional (seperti berbagi file lewat chat atau email) sangat sulit dipantau progresnya dan datanya sering tercecer. Tanpa LMS, kita akan terus kehilangan data perkembangan belajar pengguna dan membuang waktu untuk administrasi yang berulang-ulang.
 
 **3. Example (Bukti Singkat)**
-Sebagai contoh, sistem yang baru akan mengotomatisasi seluruh alur kerja yang sebelumnya manual, sehingga risiko kesalahan manusia (human error) bisa ditekan hingga titik terendah. Selain itu, keamanan data akan jauh lebih terjamin dengan teknologi enkripsi terbaru.
+Sebagai contoh, dengan LMS, seorang pengajar atau admin bisa melihat secara otomatis siapa saja yang sudah menonton materi dan siapa yang sudah lulus kuis hanya dalam satu dasbor. Semua materi tersusun rapi dalam modul, sehingga tidak ada lagi materi yang "hilang" karena tertimbun percakapan.
 
 **4. Point (Penegasan Ulang & Kesimpulan)**
-Berdasarkan tinjauan manfaat dan risiko tersebut, proyek ini dinyatakan memenuhi semua syarat kelayakan secara matang, baik dari sisi operasional maupun teknis. Oleh karena itu, keputusan akhirnya adalah proyek harus segera dieksekusi (GO).
+Berdasarkan kebutuhan akan efisiensi manajemen belajar tersebut, proyek ini dinyatakan memenuhi syarat kelayakan teknis dan operasional. Kesimpulan akhirnya, implementasi LMS harus segera dilaksanakan (GO).
 
-**Detail Analisis Kelayakan (PIECES)**
-Berikut adalah rincian pendukung mengapa proyek ini masuk kategori GO berdasarkan kerangka kerja PIECES:
+**Detail Analisis Kelayakan (Framework PIECES)**
+**Performance**: LMS akan meningkatkan kecepatan akses materi. Tidak ada lagi waktu terbuang untuk mencari file di banyak platform karena semua terpusat di satu sistem yang stabil. (GO)
 
-**Performance**: Proyek ini layak karena akan meningkatkan kinerja sistem secara signifikan. Masalah hang dan proses data yang lambat pada sistem lama akan digantikan dengan kecepatan akses tinggi yang lebih stabil. (GO)
+**Information**: Laporan nilai dan progres belajar tersaji secara otomatis dan real-time. Data hasil belajar menjadi lebih akurat dibandingkan rekap manual. (GO)
 
-**Information**: Dari sisi informasi, proyek ini akan menghasilkan data yang jauh lebih akurat, rapi, dan tersaji secara real-time, sehingga tidak ada lagi data yang tidak sinkron seperti pada sistem manual. (GO)
+**Economics**: Mengurangi biaya cetak materi fisik dan biaya transportasi untuk pelatihan tatap muka. Investasi digital ini jauh lebih hemat untuk jangka panjang. (GO)
 
-**Economics**: Secara ekonomi, investasi ini sangat menguntungkan. Kita bisa menghemat biaya perawatan sistem lama yang membengkak dan menggantinya dengan efisiensi operasional jangka panjang. (GO)
+**Control**: Keamanan materi terjaga. Hanya pengguna terdaftar yang bisa mengakses modul, dan sistem ujian memiliki fitur proteksi agar tidak terjadi kecurangan. (GO)
 
-**Control**: Proyek ini meningkatkan keamanan data secara drastis. Proteksi data yang dulunya lemah kini diperkuat dengan standar keamanan industri untuk mencegah kebocoran informasi. (GO)
-
-**Efficiency:** Tingkat efisiensi kerja akan meningkat karena alur kerja yang berulang-ulang akan dipangkas melalui otomatisasi sistem yang lebih simpel. (GO)
-
-**Service**: Kualitas layanan kepada pengguna akan jauh lebih baik karena antarmuka sistem baru didesain lebih modern dan sangat mudah untuk digunakan oleh siapa saja. (GO)
+**Efficiency**: Memangkas birokrasi pendaftaran dan pengumpulan tugas. Semua proses dikerjakan oleh sistem secara otomatis tanpa perlu campur tangan admin terus-menerus. (GO)
+**
+Service**: Pengguna bisa belajar kapan saja dan di mana saja (fleksibel). Antarmuka yang modern membuat pengalaman belajar jadi lebih menyenangkan dan tidak membosankan. (GO)
