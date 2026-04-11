@@ -7,6 +7,7 @@ dimulai dari teknologi pertukaran data seperti API (Application Programming Inte
 API memungkinkan pertukaran data menggunakan format seperti JSON dan XML, sehingga integrasi antar sistem menjadi lebih cepat, efisien, dan fleksibel, terutama pada aplikasi web dan mobile.
 
 
+
 Selanjutnya dibahas Software Development Life Cycle (SDLC) sebagai proses pengembangan perangkat lunak. 
 
 Terdapat dua metode utama, yaitu Waterfall yang bersifat linear (planning, analysis, design, implementation, testing, maintenance) 
@@ -14,6 +15,7 @@ Terdapat dua metode utama, yaitu Waterfall yang bersifat linear (planning, analy
 dan Agile yang bersifat iteratif melalui sprint, seperti pada framework Scrum yang menggunakan backlog, sprint, dan daily meeting. 
 
 Selain itu, terdapat juga Extreme Programming (XP) yang menekankan kualitas kode dan kolaborasi tim.
+
 
 
 Dalam pengembangan sistem, pengujian perangkat lunak menjadi tahap penting, yang meliputi Black Box Testing (berdasarkan input-output), 
@@ -27,6 +29,7 @@ agar proyek berjalan terencana. Selain itu, dijelaskan juga peran tim dalam proy
 Siklus pengembangan sistem bersifat iteratif, dimulai dari planning hingga maintenance, dan dapat terus berulang untuk meningkatkan kualitas sistem. 
 
 Selain itu, penggunaan tools pendukung seperti web development tools, database, dan internet juga sangat penting dalam mendukung proses pengembangan.
+
 
 
 Sebagai implementasi dari materi tersebut, pada proyek LMS, proses dimulai dari tahap planning dengan menentukan modul seperti quiz, sertifikat, dan desain sistem. 
