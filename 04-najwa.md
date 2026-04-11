@@ -71,8 +71,3 @@
   * User
 * **Maintenance:** pemeliharaan & pengembangan sistem
 
-
-Kalau mau, aku bisa bikin versi:
-
-* **super ringkas 1 halaman**
-* atau **mindmap biar gampang dipahami** 👍
