@@ -1,25 +1,29 @@
-**Narasi Kelayakan Proyek (Pola PREP)**
 
-**Point (Poin Utama):**
-Proyek modernisasi arsitektur sistem informasi rumah sakit dari berbasis monolith ke microservices dinyatakan Layak (Go) untuk dikerjakan karena sistem lama sudah mencapai batas maksimal skalabilitas dan mulai mengancam stabilitas operasional.
+****Narasi Kelayakan Proyek: Rekayasa Perangkat Lunak :****
 
-**Reason (Alasan):**
-Sistem yang ada saat ini gagal memenuhi standar kelayakan rekayasa perangkat lunak modern. Dari evaluasi mendalam, ditemukan bahwa biaya pemeliharaan (maintenance cost) terus membengkak sementara performa sistem menurun drastis saat beban puncak, yang berisiko pada keselamatan data pasien dan kecepatan layanan medis.
+**1. Point (Pernyataan Utama)**
+Status untuk proyek pengembangan sistem informasi ini adalah GO (Sangat Layak). Proyek ini bukan lagi sekadar pilihan, melainkan sebuah kebutuhan mendesak agar sistem kita tidak tertinggal jauh dari standar teknologi saat ini.
 
-**Example (Analisis PIECES):**
-Kelayakan ini dibuktikan melalui identifikasi masalah pada aspek-aspek berikut:
+**2. Reason (Alasan)**
+Alasan utamanya adalah karena infrastruktur perangkat lunak yang lama sudah mencapai batas maksimalnya (deprecated). Mempertahankan sistem lama hanya akan memperbesar biaya perbaikan dan risiko kegagalan sistem secara total, yang ujung-ujungnya bakal menghambat pertumbuhan bisnis kita.
 
-**Performance**: Sistem baru akan meningkatkan throughput transaksi pasien sebesar 50% dibandingkan sistem lama yang sering mengalami bottleneck.
+**3. Example (Bukti Singkat)**
+Sebagai contoh, sistem yang baru akan mengotomatisasi seluruh alur kerja yang sebelumnya manual, sehingga risiko kesalahan manusia (human error) bisa ditekan hingga titik terendah. Selain itu, keamanan data akan jauh lebih terjamin dengan teknologi enkripsi terbaru.
 
-**Information**: Menjamin integritas data medis yang lebih baik melalui sinkronisasi database terpusat yang meminimalisir redundansi.
+**4. Point (Penegasan Ulang & Kesimpulan)**
+Berdasarkan tinjauan manfaat dan risiko tersebut, proyek ini dinyatakan memenuhi semua syarat kelayakan secara matang, baik dari sisi operasional maupun teknis. Oleh karena itu, keputusan akhirnya adalah proyek harus segera dieksekusi (GO).
 
-**Economics**: Analisis ROI menunjukkan bahwa meskipun biaya pengembangan awal tinggi, efisiensi operasional akan menghemat biaya server dan resource hingga 30% dalam dua tahun.
+**Detail Analisis Kelayakan (PIECES)**
+Berikut adalah rincian pendukung mengapa proyek ini masuk kategori GO berdasarkan kerangka kerja PIECES:
 
-**Control**: Peningkatan keamanan melalui role-based access control (RBAC) yang lebih ketat untuk mematuhi regulasi perlindungan data pribadi.
+**Performance**: Proyek ini layak karena akan meningkatkan kinerja sistem secara signifikan. Masalah hang dan proses data yang lambat pada sistem lama akan digantikan dengan kecepatan akses tinggi yang lebih stabil. (GO)
 
-**Efficiency**: Mengurangi waktu tunggu proses administrasi karena alur data yang otomatis tanpa perlu input berulang.
+**Information**: Dari sisi informasi, proyek ini akan menghasilkan data yang jauh lebih akurat, rapi, dan tersaji secara real-time, sehingga tidak ada lagi data yang tidak sinkron seperti pada sistem manual. (GO)
 
-**Service**: Meningkatkan User Experience bagi tenaga medis, memungkinkan mereka fokus pada perawatan pasien daripada menghadapi kendala teknis aplikasi.
+**Economics**: Secara ekonomi, investasi ini sangat menguntungkan. Kita bisa menghemat biaya perawatan sistem lama yang membengkak dan menggantinya dengan efisiensi operasional jangka panjang. (GO)
 
-**Point (Kesimpulan)**:
-Berdasarkan tinjauan komprehensif terhadap enam parameter PIECES tersebut, proyek ini memiliki nilai strategis yang sangat tinggi. Risiko dari "No-Go" (tidak mengerjakan proyek) jauh lebih besar daripada investasi yang dikeluarkan, sehingga proyek ini direkomendasikan untuk segera memasuki tahap Sprints/Development.
+**Control**: Proyek ini meningkatkan keamanan data secara drastis. Proteksi data yang dulunya lemah kini diperkuat dengan standar keamanan industri untuk mencegah kebocoran informasi. (GO)
+
+**Efficiency:** Tingkat efisiensi kerja akan meningkat karena alur kerja yang berulang-ulang akan dipangkas melalui otomatisasi sistem yang lebih simpel. (GO)
+
+**Service**: Kualitas layanan kepada pengguna akan jauh lebih baik karena antarmuka sistem baru didesain lebih modern dan sangat mudah untuk digunakan oleh siapa saja. (GO)
