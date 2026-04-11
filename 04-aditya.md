@@ -1,3 +1,43 @@
-Development Life Cycle (SDLC) yang mencakup berbagai model pengembangan seperti Waterfall, Scrum, Agile, dan XP (Extreme Programming). Proses pengembangan ini melibatkan tahapan krusial mulai dari perencanaan (Planning), pencarian (Search), hingga monitoring dan kontrol proyek. Dalam manajemennya, ditekankan pentingnya elemen waktu (Time), biaya (Cost), manajemen proyek (PM), serta peran pengembang (Dev) dan desain dalam menjaga kualitas sistem.
+1. Topik utama: Pengembangan Sistem / Software
 
-Selain metodologi, materi tersebut juga menyentuh aspek teknis seperti pengujian perangkat lunak menggunakan metode Black Box dan White Box, serta penggunaan metrik COCOMO dan SLOC (Source Lines of Code) untuk estimasi proyek. Terdapat juga penyebutan mengenai arsitektur sistem seperti penggunaan API (JSON/XML), bahasa pemrograman (PHP), serta integrasi database (SQL). Secara keseluruhan, catatan ini memberikan gambaran komprehensif tentang bagaimana sebuah perangkat lunak dirancang, dikelola, diuji, dan diimplementasikan secara sistematis.
+Membahas konsep API → JSON/XML untuk komunikasi data.
+Ada pembahasan tentang CMS (Content Management System).
+Struktur sistem dibagi menjadi beberapa bagian.
+
+2. Arsitektur Sistem
+
+Ada bagian SDLC (Software Development Life Cycle).
+Ditunjukkan proses seperti:
+Planning
+Development
+Maintenance
+Konsep modular / layanan (kemungkinan microservices atau komponen terpisah).
+
+3. Komponen Sistem
+
+Database / backend (ditulis seperti “schema”, “DB”, dll).
+Frontend / web / mobile.
+Integrasi dengan API.
+
+4. Metode & Konsep
+
+Disebutkan:
+Blackbox & Whitebox (metode testing)
+Agile (metodologi pengembangan)
+Ada diagram lingkaran yang menggambarkan alur proses atau siklus.
+
+5. Tools & Teknologi
+
+Disebutkan beberapa tools seperti:
+Web
+Server
+Framework / library (tidak terlalu jelas tulisannya)
+Ada kemungkinan membahas stack teknologi.
+
+6. Konsep tambahan
+
+Use case / diagram interaksi (gambar lingkaran dengan panah).
+Relasi antar komponen sistem.
+
+Intinya:
+tentang perancangan dan pengembangan sistem software, mulai dari arsitektur, alur kerja (SDLC), penggunaan API, hingga metode testing dan pengembangan seperti Agile.
