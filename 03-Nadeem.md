@@ -1,61 +1,67 @@
-1. Narasi Kelayakan Proyek: Rekayasa Perangkat Lunak
+1. Narasi Kelayakan Proyek: LMS (Learning Management System)
 A. Point (Pernyataan Utama)
-Status untuk proyek pengembangan sistem informasi ini adalah GO (Sangat Layak). Proyek ini bukan lagi sekadar pilihan, melainkan sebuah kebutuhan mendesak agar sistem kita tidak tertinggal jauh dari standar teknologi saat ini.
+
+Status untuk proyek pengembangan Learning Management System (LMS) adalah GO (Sangat Layak).
+Proyek ini bukan hanya pilihan, tetapi kebutuhan penting agar proses pembelajaran tidak tertinggal dari perkembangan teknologi digital saat ini.
 
 B. Reason (Alasan)
-Alasan utamanya adalah karena infrastruktur perangkat lunak yang lama sudah mencapai batas maksimalnya (deprecated). Mempertahankan sistem lama hanya akan memperbesar biaya perbaikan dan risiko kegagalan sistem secara total, yang ujung-ujungnya bakal menghambat pertumbuhan bisnis kita.
+
+Alasan utamanya adalah karena sistem pembelajaran lama masih manual atau menggunakan platform yang sudah tidak optimal. Hal ini menyebabkan proses belajar mengajar menjadi tidak efisien, sulit dipantau, dan kurang fleksibel. Jika tetap dipertahankan, akan menghambat kualitas pendidikan.
 
 C. Example (Bukti Singkat)
-Sebagai contoh, sistem yang baru akan mengotomatisasi seluruh alur kerja yang sebelumnya manual, sehingga risiko kesalahan manusia (human error) bisa ditekan hingga titik terendah. Selain itu, keamanan data akan jauh lebih terjamin dengan teknologi enkripsi terbaru.
 
+Sebagai contoh, LMS akan:
+
+Mengotomatisasi pengumpulan tugas dan penilaian
+Menyediakan materi pembelajaran secara online (video, modul, kuis)
+Mengurangi kesalahan manusia dalam pencatatan nilai
+Meningkatkan keamanan data siswa dan dosen
 D. Point (Penegasan Ulang & Kesimpulan)
-Berdasarkan tinjauan manfaat dan risiko tersebut, proyek ini dinyatakan memenuhi semua syarat kelayakan secara matang, baik dari sisi operasional maupun teknis. Oleh karena itu, keputusan akhirnya adalah proyek harus segera dieksekusi (GO).
 
-2. Alasan Project Layak Dikerjakan
+Berdasarkan manfaat dan risiko yang telah dianalisis, proyek LMS memenuhi semua syarat kelayakan baik secara teknis maupun operasional.
+👉 Keputusan: GO (Proyek harus segera dijalankan)
 
-Project layak dikerjakan karena:
+📌 2. Alasan Project LMS Layak Dikerjakan
 
-Sistem lama memiliki banyak kekurangan (lambat, tidak efisien, kurang aman)
-Project memberikan solusi yang memperbaiki kinerja dan kualitas sistem
-Memberikan manfaat lebih besar dibandingkan biaya dan risiko
-Risiko yang ada masih bisa dikendalikan
+Project LMS layak dikerjakan karena:
 
-
-Analisis PIECES (Alasan + Penjelasan)
+Sistem pembelajaran lama tidak efisien (manual / terpisah-pisah)
+LMS memberikan solusi pembelajaran digital yang terintegrasi
+Manfaat lebih besar dibandingkan biaya
+Risiko masih bisa dikendalikan
+📌 3. Analisis PIECES untuk LMS
 🔹 Performance (Kinerja)
 
-Alasan: Sistem saat ini lambat dan tidak stabil
+Alasan: Sistem pembelajaran lambat dan tidak terstruktur
 Penjelasan:
-Sistem sering mengalami delay saat digunakan banyak user. Hal ini menghambat pekerjaan. Dengan project baru, sistem akan lebih cepat dan mampu menangani banyak pengguna.
+Pengumpulan tugas dan penyampaian materi sering terlambat. LMS membuat proses lebih cepat, terorganisir, dan bisa diakses banyak siswa secara bersamaan.
 
 🔹 Information (Informasi)
 
-Alasan: Data tidak akurat dan tidak real-time
+Alasan: Informasi pembelajaran tidak terpusat
 Penjelasan:
-Informasi yang dihasilkan sering terlambat atau salah. Project akan memperbaiki dengan menyediakan data yang lebih akurat, lengkap, dan bisa diakses kapan saja.
+Materi, nilai, dan jadwal tersebar dan sulit diakses. LMS menyediakan semua informasi dalam satu sistem yang real-time dan mudah diakses.
 
 🔹 Economy (Ekonomi)
 
-Alasan: Biaya operasional tinggi
+Alasan: Biaya operasional cukup besar (kertas, waktu, tenaga)
 Penjelasan:
-Banyak proses manual yang memakan biaya. Project akan mengurangi biaya dengan otomatisasi sehingga lebih hemat dalam jangka panjang.
+Proses manual membutuhkan banyak sumber daya. LMS mengurangi penggunaan kertas dan meningkatkan efisiensi biaya dalam jangka panjang.
 
 🔹 Control (Kontrol)
 
-Alasan: Keamanan sistem masih lemah
+Alasan: Kurangnya kontrol terhadap data dan aktivitas belajar
 Penjelasan:
-Tidak ada pembatasan akses yang jelas sehingga berisiko terjadi kebocoran data. Project akan menambahkan sistem login, hak akses, dan keamanan data.
+Sulit memantau aktivitas siswa dan keamanan data. LMS menyediakan login, hak akses, dan monitoring aktivitas pengguna.
 
 🔹 Efficiency (Efisiensi)
 
-Alasan: Banyak pekerjaan manual dan berulang
+Alasan: Banyak proses manual dan berulang
 Penjelasan:
-Proses kerja menjadi lama dan tidak efektif. Dengan project, proses akan lebih otomatis sehingga menghemat waktu dan tenaga.
+Guru harus mengecek tugas satu per satu secara manual. LMS mengotomatisasi penilaian dan pengelolaan tugas sehingga lebih efisien.
 
 🔹 Service (Layanan)
 
-Alasan: Layanan ke user kurang baik
+Alasan: Layanan pembelajaran kurang fleksibel
 Penjelasan:
-Sistem sulit digunakan dan lambat. Project akan meningkatkan tampilan dan kemudahan penggunaan sehingga user lebih puas.
-
-
+Siswa hanya bisa belajar di kelas. LMS memungkinkan belajar kapan saja dan di mana saja dengan pengalaman yang lebih mudah dan nyaman.
