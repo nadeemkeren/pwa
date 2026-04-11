@@ -1,6 +1,6 @@
 
 Rangkuman Materi Rekayasa Perangkat Lunak
-1.Teknologi dan Pertukaran Data (API, JSON, XML)
+ 1.Teknologi dan Pertukaran Data (API, JSON, XML) 
 
 Pada bagian awal materi dijelaskan mengenai teknologi yang digunakan dalam pengembangan sistem, khususnya API (Application Programming Interface) yang berfungsi sebagai penghubung antar aplikasi. API memungkinkan sistem untuk saling bertukar data menggunakan format seperti JSON dan XML. Penggunaan teknologi ini sangat penting dalam pengembangan aplikasi modern, terutama pada platform web dan mobile, karena memungkinkan integrasi antar sistem berjalan secara efisien, cepat, dan fleksibel.
 
