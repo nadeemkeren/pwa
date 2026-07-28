@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Pintar - Premium Pink Edition</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        :root {
+            --primary: #d81b60;
+            --primary-dark: #880e4f;
+            --primary-light: #fce4ec;
+            --bg-color: #fff0f5;
+            --surface: #ffffff;
+            --text: #2c001e;
+            --text-light: #6a4f5f;
+            --border: #f8bbd0;
+            --transition: all 0.3s ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+
+        /* --- TOAST NOTIFICATION CUSTOM --- */
+        #toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toast-msg {
+            background: var(--surface);
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.15);
+            border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 20px;
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 600;
+            min-width: 280px;
+            animation: slideIn 0.3s ease forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(120%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* --- CUSTOM MODAL CONFIRMATION --- */
+        .custom-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(44, 0, 30, 0.4);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1500;
+        }
+        .custom-modal {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
+            padding: 24px;
+            box-shadow: 0 8px 30px rgba(216, 27, 96, 0.2);
+            text-align: center;
+        }
+        .custom-modal h3 { color: var(--primary-dark); margin-bottom: 12px; font-size: 18px; }
+        .custom-modal p { color: var(--text-light); font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+        .modal-buttons { display: flex; gap: 10px; justify-content: center; }
+        .modal-btn { padding: 10px 20px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 14px; }
+        .modal-btn-ok { background-color: var(--primary); color: white; }
+        .modal-btn-ok:hover { background-color: var(--primary-dark); }
+        .modal-btn-cancel { background-color: #e0e0e0; color: #333; }
+
+        /* --- AUTH STYLE --- */
+        .auth-container { display: flex; flex: 1; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+        .auth-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; width: 100%; max-width: 400px; box-shadow: 0 4px 20px rgba(216, 27, 96, 0.1); }
+        .auth-card h2 { color: var(--primary-dark); text-align: center; margin-bottom: 24px; }
+        .role-selector { display: flex; gap: 10px; margin-bottom: 20px; }
+        .role-btn { flex: 1; padding: 10px; border: 1px solid var(--border); background: none; border-radius: 6px; cursor: pointer; font-weight: 600; color: var(--text-light); }
+        .role-btn.active { background-color: var(--primary); color: white; border-color: var(--primary); }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; }
+        .form-group input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; outline: none; }
+        .form-group input:focus { border-color: var(--primary); }
+        .btn-submit, .btn-nav { width: 100%; padding: 12px; background-color: var(--primary); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; text-align: center; }
+        .btn-submit:hover, .btn-nav:hover { background-color: var(--primary-dark); }
+        .auth-toggle { text-align: center; margin-top: 16px; font-size: 14px; color: var(--text-light); }
+        .auth-toggle a { color: var(--primary); text-decoration: none; font-weight: bold; }
+        .error-msg { color: #d93025; background-color: #fce8e6; padding: 10px; border-radius: 6px; font-size: 13px; margin-bottom: 14px; display: none; text-align: center; border: 1px solid #f9dad5; }
+        .success-screen { display: none; flex-direction: column; align-items: center; text-align: center; padding: 20px 0; }
+        .success-icon { font-size: 48px; margin-bottom: 16px; }
+        .success-title { color: var(--primary-dark); font-size: 20px; font-weight: bold; margin-bottom: 8px; }
+        .success-desc { color: var(--text-light); font-size: 14px; margin-bottom: 24px; }
