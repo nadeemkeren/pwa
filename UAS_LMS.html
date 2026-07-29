@@ -99,3 +99,96 @@
         .success-icon { font-size: 48px; margin-bottom: 16px; }
         .success-title { color: var(--primary-dark); font-size: 20px; font-weight: bold; margin-bottom: 8px; }
         .success-desc { color: var(--text-light); font-size: 14px; margin-bottom: 24px; }
+
+        /* --- GLOBAL DASHBOARD LAYOUT --- */
+        .dashboard { display: none; flex-direction: column; min-height: 100vh; }
+        .top-app-bar { background-color: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .top-bar-main { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; }
+        .user-info { display: flex; align-items: center; gap: 12px; }
+        .logout-btn { background: none; border: 1px solid var(--primary); color: var(--primary); padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: bold; }
+        .logout-btn:hover { background-color: var(--primary); color: white; }
+        
+        .main-layout { display: flex; flex: 1; }
+        .sidebar { width: 240px; background: var(--surface); border-right: 1px solid var(--border); padding: 20px 10px; }
+        .sidebar-menu { list-style: none; }
+        .sidebar-item { padding: 12px 16px; margin-bottom: 4px; border-radius: 8px; color: var(--text-light); cursor: pointer; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+        .sidebar-item:hover, .sidebar-item.active { background-color: var(--primary-light); color: var(--primary-dark); }
+        .content-area { flex: 1; padding: 24px; overflow-y: auto; }
+
+        /* --- KELAS VIEW COMPONENT --- */
+        .class-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+        .class-box { background: var(--surface); border: 2px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; cursor: pointer; transition: var(--transition); }
+        .class-box:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(216,27,96,0.1); }
+        .class-box h3 { color: var(--primary-dark); font-size: 24px; margin-bottom: 8px; }
+        
+        .room-container { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; height: 580px; }
+        .room-header { padding: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: #fff5f8; border-top-left-radius: 12px; border-top-right-radius: 12px; }
+        .room-body { flex: 1; display: flex; overflow: hidden; }
+        .chat-section { flex: 1.6; display: flex; flex-direction: column; border-right: 1px solid var(--border); padding: 16px; }
+        .chat-messages { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-bottom: 10px; }
+        .msg-bubble { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.4; }
+        .msg-bubble.dosen-msg { background-color: var(--primary-light); color: var(--primary-dark); align-self: flex-start; border-top-left-radius: 0; }
+        .msg-bubble .sender { font-weight: bold; font-size: 11px; display: block; margin-bottom: 2px; }
+        .chat-input-area { display: flex; gap: 8px; margin-top: 10px; }
+        .chat-input-area input { flex: 1; padding: 10px; border: 1px solid var(--border); border-radius: 6px; outline: none; }
+        
+        .room-panels { flex: 1.4; padding: 16px; display: flex; flex-direction: column; gap: 16px; overflow-y: auto; background: #fffbfe; }
+        .panel-section { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+        .panel-section h4 { color: var(--primary-dark); margin-bottom: 8px; font-size: 14px; border-bottom: 1px solid var(--border); padding-bottom: 4px; }
+        
+        /* --- LIST INTERAKTIF --- */
+        .item-list-view { list-style: none; font-size: 13px; }
+        .item-list-view li { 
+            padding: 10px 12px; 
+            border-bottom: 1px dashed var(--border); 
+            color: var(--text-light); 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            gap: 12px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        .item-list-view li:last-child { border: none; }
+        .item-content-text { flex: 1; word-break: break-word; line-height: 1.4; }
+        .dosen-panel-active .item-list-view li:hover { background-color: #fff0f5; }
+        .hover-actions { display: none; gap: 6px; flex-shrink: 0; }
+        .dosen-panel-active .item-list-view li:hover .hover-actions { display: flex; }
+
+        .action-inline-btn { border: none; padding: 4px 8px; font-size: 11px; font-weight: bold; border-radius: 4px; cursor: pointer; color: white; transition: opacity 0.2s; }
+        .action-inline-btn:hover { opacity: 0.9; }
+        .btn-inline-edit { background-color: #0288d1; }
+        .btn-inline-delete { background-color: #d32f2f; }
+
+        .inline-edit-wrapper { display: flex; width: 100%; gap: 6px; }
+        .inline-edit-input { flex: 1; padding: 6px; border: 1px solid var(--primary); border-radius: 4px; font-size: 13px; outline: none; }
+
+        /* --- ABSENSI ATTENDEES LOG LIST --- */
+        .absen-log-container {
+            margin-top: 10px;
+            background: var(--bg-color);
+            border-radius: 6px;
+            padding: 8px;
+            max-height: 90px;
+            overflow-y: auto;
+            border: 1px solid var(--border);
+        }
+        .absen-log-title { font-size: 11px; font-weight: bold; color: var(--primary-dark); margin-bottom: 4px; text-transform: uppercase; }
+        .absen-log-list { list-style: none; font-size: 12px; color: var(--text); padding-left: 4px; }
+        .absen-log-list li { padding: 2px 0; border-bottom: 1px solid #fce4ec; }
+        .absen-log-list li:last-child { border: none; }
+
+        /* --- OTHER FORMS --- */
+        .form-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; max-width: 500px; }
+        .form-box textarea, .form-box select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; outline: none; margin-bottom: 12px; resize: none; font-family: inherit; }
+        .form-actions-row { display: flex; gap: 10px; }
+        .btn-cancel { flex: 1; padding: 10px; background: #e0e0e0; color: #333; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+
+        .absen-btn { background-color: #2e7d32; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; font-size: 13px; }
+        .absen-btn:disabled { background-color: #b0bec5; cursor: not-allowed; }
+
+        .grade-table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 14px; }
+        .grade-table th, .grade-table td { border: 1px solid var(--border); padding: 8px; text-align: left; }
+        .grade-table th { background-color: var(--primary-light); color: var(--primary-dark); }
+        .grade-table input[type="number"] { width: 60px; padding: 4px; border: 1px solid var(--border); border-radius: 4px; }
+        .btn-save-grade { background-color: var(--primary); color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; }
