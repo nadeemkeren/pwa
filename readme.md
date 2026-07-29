@@ -1,8 +1,7 @@
 nadeem   
 muslih  
-lestari   
-clara 
-
-najwa
-
+lestari  
+clara    
+najwa 
 amel
+
