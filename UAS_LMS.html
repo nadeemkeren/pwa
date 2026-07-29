@@ -281,3 +281,125 @@
             </div>
         </div>
     </div>
+
+    <!-- MODAL PILIHAN JAWAB / UPLOAD TUGAS -->
+    <div class="custom-modal-overlay" id="upload-modal-overlay">
+        <div class="custom-modal" style="max-width: 460px; text-align: left;">
+            <h3 style="text-align:center; margin-bottom: 12px;">Metode Pengumpulan Jawaban</h3>
+            <div class="upload-type-tabs" id="upload-type-tabs"></div>
+            <div id="upload-type-body"></div>
+            <div class="modal-buttons" style="margin-top: 16px;">
+                <button class="modal-btn modal-btn-cancel" onclick="closeUploadModal()">Batal</button>
+                <button class="modal-btn modal-btn-ok" onclick="confirmUploadSelection()">Simpan Jawaban</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PILIH BANK PEMBAYARAN -->
+    <div class="custom-modal-overlay" id="bank-modal-overlay">
+        <div class="custom-modal">
+            <h3>Pilih Metode Pembayaran</h3>
+            <p>Pilih bank tujuan untuk membayar tagihan yang telah Anda pilih.</p>
+            <div class="bank-choice-row" id="bank-choice-row">
+                <button class="bank-choice-btn" id="bank-btn-bca" onclick="selectBank('BCA')">🏦<br>BCA</button>
+                <button class="bank-choice-btn" id="bank-btn-mandiri" onclick="selectBank('Mandiri')">🏦<br>Mandiri</button>
+            </div>
+            <div class="modal-buttons">
+                <button class="modal-btn modal-btn-cancel" onclick="closeBankModal()">Batal</button>
+                <button class="modal-btn modal-btn-ok" onclick="confirmPayment()">Bayar Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= HALAMAN LOGIN & SIGN UP ================= -->
+    <div class="auth-container" id="auth-view">
+        <main class="auth-card">
+            <div id="form-block">
+                <h2 id="auth-title">Masuk LMS</h2>
+                <div class="role-selector" role="radiogroup">
+                    <button class="role-btn active" id="btn-role-mhs" onclick="setRole('mahasiswa')">Mahasiswa</button>
+                    <button class="role-btn" id="btn-role-dsn" onclick="setRole('dosen')">Dosen</button>
+                </div>
+                <div class="error-msg" id="error-box" role="alert"></div>
+                
+                <form id="authForm" onsubmit="handleAuth(event)">
+                    <div class="form-group" id="group-nim">
+                        <label for="input-nim">NIM Mahasiswa</label>
+                        <input type="text" id="input-nim" placeholder="Masukkan NIM Anda">
+                    </div>
+                    
+                    <div class="form-group" id="group-nama">
+                        <label id="label-nama" for="input-nama">Nama Lengkap</label>
+                        <input type="text" id="input-nama" placeholder="Masukkan nama lengkap...">
+                    </div>
+
+                    <div class="form-group" id="group-prodi" style="display:none;">
+                        <label id="label-prodi" for="input-prodi">Program Studi</label>
+                        <select id="input-prodi"></select>
+                    </div>
+
+                    <div class="form-group" id="group-angkatan" style="display:none;">
+                        <label for="input-angkatan">Angkatan (Tahun Masuk)</label>
+                        <select id="input-angkatan"></select>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit" id="btn-submit-text">Masuk</button>
+                </form>
+                
+                <div class="auth-toggle">
+                    <span id="toggle-label">Belum punya akun?</span>
+                    <a href="#" id="toggle-action" onclick="toggleAuthMode(event)">Daftar Sekarang</a>
+                </div>
+            </div>
+
+            <div class="success-screen" id="success-block">
+                <div class="success-icon">🌸</div>
+                <div class="success-title">Akun Berhasil Terdaftar!</div>
+                <div class="success-desc" id="success-desc-text"></div>
+                <button class="btn-nav" onclick="backToInitialLogin()">Kembali ke Halaman Utama</button>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- ================= DASHBOARD DOSEN ================= -->
+    <div class="dashboard dosen-panel-active" id="dashboard-dosen">
+        <header class="top-app-bar">
+            <div class="top-bar-main">
+                <h1 style="color: var(--primary-dark); font-size: 20px;">LMS Pintar &bull; Panel Dosen</h1>
+                <div class="user-info">
+                    <span id="dsn-display" style="font-weight: 600;"></span>
+                    <button class="logout-btn" onclick="handleLogout()">Keluar</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-layout">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item active" id="menu-dsn-kelas" onclick="switchDosenMenu('kelas')">🏫 Ruang Kelas</li>
+                    <li class="sidebar-item" id="menu-dsn-tugas" onclick="switchDosenMenu('tugas')">📝 Buat Tugas</li>
+                    <li class="sidebar-item" id="menu-dsn-materi" onclick="switchDosenMenu('materi')">📚 Buat Materi</li>
+                    <li class="sidebar-item" id="menu-dsn-nilai" onclick="switchDosenMenu('nilai')">💯 Lihat Nilai</li>
+                </ul>
+            </aside>
+            <main class="content-area">
+                <div id="view-dsn-kelas">
+                    <h2>Pilih Kelas yang Diampu</h2>
+                    <div class="class-grid" id="dsn-class-list"></div>
+                    <div id="dsn-room-chat" style="display:none; margin-top: 20px;"></div>
+                </div>
+                <div id="view-dsn-tugas" style="display:none;">
+                    <h2>Form Pembuatan Tugas Baru</h2><br>
+                    <div class="form-box">
+                        <label style="font-weight:600; display:block; margin-bottom:6px;">Pilih Kelas Target:</label>
+                        <select id="task-target-class"></select>
+                        <label style="font-weight:600; display:block; margin-bottom:6px;">Isi Instruksi Tugas / Soal:</label>
+                        <textarea id="task-text" rows="5" placeholder="Tuliskan instruksi tugas atau soal di sini..."></textarea>
+                        <label style="font-weight:600; display:block; margin-bottom:6px;">Lampiran Dokumen (Opsional):</label>
+                        <input type="file" id="task-file-input" style="width:100%; margin-bottom:12px;">
+                        <div class="form-actions-row">
+                            <button class="btn-cancel" onclick="clearTaskForm()">Batalkan</button>
+                            <button class="btn-submit" style="margin:0;" onclick="submitTaskForm()">Buat Tugas</button>
+                        </div>
+                    </div>
+                </div>
