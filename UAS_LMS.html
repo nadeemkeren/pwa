@@ -650,3 +650,131 @@
             </main>
         </div>
     </div>
+<!-- ================= JAVASCRIPT LOGIC CENTER ================= -->
+    <script>
+        const PRODI_LIST = [
+            { code: 'IK', name: 'Ilmu Komputer' },
+            { code: 'IM', name: 'Manajemen Informatika' },
+            { code: 'IP', name: 'Sistem Informasi' }
+        ];
+        const ANGKATAN_LIST = ['23', '24', '25'];
+
+        function getProdiName(code) { const p = PRODI_LIST.find(p => p.code === code); return p ? p.name : code; }
+        function buildClassCode(prodiCode, angkatan) { return `${prodiCode}${angkatan}1`; }
+
+        const ALL_CLASS_CODES = [];
+        PRODI_LIST.forEach(p => ANGKATAN_LIST.forEach(a => ALL_CLASS_CODES.push(buildClassCode(p.code, a))));
+
+        function getClassesForProdi(prodiCode) { return ALL_CLASS_CODES.filter(c => c.startsWith(prodiCode)); }
+
+        function buildEmptyClassMap(fillFn) {
+            let o = {};
+            ALL_CLASS_CODES.forEach(c => o[c] = fillFn(c));
+            return o;
+        }
+
+        const DEFAULT_CHATS = buildEmptyClassMap(() => []);
+        const DEFAULT_TASKS = buildEmptyClassMap(c => c === 'IK241' ? ["Soal Pertemuan 1: Jelaskan perbedaan model SDLC Waterfall dan Agile Berikan kelebihan masing-masing!"] : []);
+        const DEFAULT_MATERI = buildEmptyClassMap(c => c === 'IK241' ? ["📝 Teks: Pengenalan dasar Rekayasa Perangkat Lunak. Rekayasa Perangkat Lunak (RPL) adalah disiplin ilmu yang membahas semua aspek produksi perangkat lunak, mulai dari tahap awal spesifikasi sistem sampai pemeliharaan sistem setelah digunakan."] : []);
+        const DEFAULT_ABSEN = buildEmptyClassMap(() => ({ isOpen: false, list: {}, sessionCode: null }));
+
+        const INITIAL_STUDENTS = [
+            {nim: 'IK24001', nama: 'Nadeem Kaia', prodiCode: 'IK', prodiName: getProdiName('IK'), angkatan: '24', kelas: buildClassCode('IK','24')},
+            {nim: 'IK24002', nama: 'Budi Santoso', prodiCode: 'IK', prodiName: getProdiName('IK'), angkatan: '24', kelas: buildClassCode('IK','24')},
+            {nim: 'IM25001', nama: 'Siti Aminah', prodiCode: 'IM', prodiName: getProdiName('IM'), angkatan: '25', kelas: buildClassCode('IM','25')},
+            {nim: 'IP23001', nama: 'Ahmad Fauzi', prodiCode: 'IP', prodiName: getProdiName('IP'), angkatan: '23', kelas: buildClassCode('IP','23')}
+        ];
+        
+        const DEFAULT_GRADES = {};
+
+        const KRS_COURSES = [
+            { kode: 'IK241', nama: 'Jaringan Komputer', dosen: 'Amin Muzaeni', sks: 3 },
+            { kode: 'IK231', nama: 'Wireless & Mobile Computing', dosen: 'Wawan Sismadi', sks: 3 },
+            { kode: 'IK221', nama: 'Etika Profesi', dosen: 'Siti Sarah', sks: 2 },
+            { kode: 'IK241', nama: 'Pemrograman WEB', dosen: 'Maulana Rachman', sks: 3 },
+            { kode: 'IK241', nama: 'Rekayasa Perangkat Lunak', dosen: 'Wawan Sismadi', sks: 3 },
+            { kode: 'IK251', nama: 'Arsitektur Komputer', dosen: 'Amin Muzaeni', sks: 3 },
+            { kode: 'IK241', nama: 'Logika Samar', dosen: 'Johan Mohammad Palah', sks: 2 },
+            { kode: 'IK231', nama: 'Komputasi Cloud', dosen: 'Amin Muzaeni', sks: 3 },
+            { kode: 'IK241', nama: 'Pengolahan Citra Digital', dosen: 'Siti Sarah', sks: 3 }
+        ];
+
+        function buildDefaultTagihanForNim() {
+            const jatuhTempo = ['15 Feb 2026','15 Mar 2026','15 Apr 2026','15 Mei 2026','15 Jun 2026','15 Jul 2026'];
+            let obj = {};
+            for(let i = 1; i <= 6; i++) {
+                obj['SPP' + i] = {
+                    idTransaksi: 'TRX-SPP' + i + '-' + Math.floor(1000 + Math.random()*8999),
+                    jatuhTempo: jatuhTempo[i-1],
+                    biaya: 800000,
+                    paid: false,
+                    tanggalBayar: null,
+                    bank: null
+                };
+            }
+            return obj;
+        }
+
+        const APP_DATA_VERSION = 'v2-prodi-kelas-mhs';
+
+        function initDataStore() {
+            if(localStorage.getItem('app_data_version') !== APP_DATA_VERSION) {
+                localStorage.clear();
+                localStorage.setItem('app_data_version', APP_DATA_VERSION);
+            }
+            if(!localStorage.getItem('chats')) localStorage.setItem('chats', JSON.stringify(DEFAULT_CHATS));
+            if(!localStorage.getItem('tasks')) localStorage.setItem('tasks', JSON.stringify(DEFAULT_TASKS));
+            if(!localStorage.getItem('materi')) localStorage.setItem('materi', JSON.stringify(DEFAULT_MATERI));
+            if(!localStorage.getItem('absen')) localStorage.setItem('absen', JSON.stringify(DEFAULT_ABSEN));
+            if(!localStorage.getItem('grades')) localStorage.setItem('grades', JSON.stringify(DEFAULT_GRADES));
+            if(!localStorage.getItem('db_mahasiswa')) localStorage.setItem('db_mahasiswa', JSON.stringify(INITIAL_STUDENTS));
+            if(!localStorage.getItem('db_dosen')) localStorage.setItem('db_dosen', JSON.stringify([
+                {nama:'Nadeem', prodiCode:'IK', prodiName: getProdiName('IK')},
+                {nama:'Rizaliano', prodiCode:'IP', prodiName: getProdiName('IP')}
+            ]));
+            if(!localStorage.getItem('krs')) localStorage.setItem('krs', JSON.stringify({}));
+            if(!localStorage.getItem('submissions')) localStorage.setItem('submissions', JSON.stringify({}));
+            if(!localStorage.getItem('tagihan')) localStorage.setItem('tagihan', JSON.stringify({}));
+        }
+        initDataStore();
+
+        let currentRole = 'mahasiswa';
+        let isSignUpMode = false;
+        let currentUserSession = null; 
+        let activeRoomClass = null; 
+        let pendingDeleteFn = null;
+
+        const authView = document.getElementById('auth-view');
+        const errorBox = document.getElementById('error-box');
+        const successBlock = document.getElementById('success-block');
+        const formBlock = document.getElementById('form-block');
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast-msg';
+            toast.innerText = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.animation = 'slideIn 0.3s ease reverse forwards';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function showCustomConfirm(message, onConfirm) {
+            const modal = document.getElementById('custom-confirm-modal');
+            document.getElementById('modal-text').innerText = message;
+            modal.style.display = 'flex';
+            pendingDeleteFn = onConfirm;
+        }
+
+        document.getElementById('modal-cancel-btn').addEventListener('click', () => {
+            document.getElementById('custom-confirm-modal').style.display = 'none';
+            pendingDeleteFn = null;
+        });
+
+        document.getElementById('modal-confirm-btn').addEventListener('click', () => {
+            if (pendingDeleteFn) pendingDeleteFn();
+            document.getElementById('custom-confirm-modal').style.display = 'none';
+            pendingDeleteFn = null;
+        });
