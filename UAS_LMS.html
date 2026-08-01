@@ -524,3 +524,129 @@
                         </div>
                     </div>
                 </div>
+<div id="view-dsn-materi" style="display:none;">
+                    <h2>Form Unggah Materi</h2><br>
+                    <div class="form-box">
+                        <label style="font-weight:600; display:block; margin-bottom:6px;">Pilih Kelas Target:</label>
+                        <select id="materi-target-class"></select>
+                        <label style="font-weight:600; display:block; margin-bottom:6px;">Tipe Materi:</label>
+                        <select id="materi-type" onchange="adaptMateriPlaceholder()">
+                            <option value="text">Teks Buatan Sendiri</option>
+                            <option value="link">Tautan / URL Link (Zoom, Drive, dsb)</option>
+                            <option value="document">Berkas Dokumen (PDF, Word, dsb)</option>
+                        </select>
+                        <label style="font-weight:600; display:block; margin-bottom:6px;" id="materi-text-label">Konten / Deskripsi Materi:</label>
+                        <textarea id="materi-text" rows="4" placeholder="Tulis teks materi akademik..."></textarea>
+
+                        <div id="materi-link-group" style="display:none;">
+                            <label style="font-weight:600; display:block; margin-bottom:6px;">Masukkan Link / URL:</label>
+                            <input type="text" id="materi-link-input" placeholder="https://..." style="width:100%; padding:10px; border:1px solid var(--border); border-radius:6px; margin-bottom:12px; outline:none;">
+                        </div>
+
+                        <div id="materi-file-group" style="display:none;">
+                            <label style="font-weight:600; display:block; margin-bottom:6px;">Upload Berkas Dokumen:</label>
+                            <input type="file" id="materi-file-input" style="width:100%; margin-bottom:12px;">
+                        </div>
+
+                        <div class="form-actions-row">
+                            <button class="btn-cancel" onclick="clearMateriForm()">Batalkan</button>
+                            <button class="btn-submit" style="margin:0;" onclick="submitMateriForm()">Bagikan Materi</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="view-dsn-nilai" style="display:none;">
+                    <h2>Koreksi & Penilaian Mandiri</h2><br>
+                    <label style="font-weight:600;">Pilih Kelas:</label>
+                    <select id="score-class-select" onchange="renderGradingTable()" style="padding:6px; border-radius:4px; border:1px solid var(--border); outline:none; margin-left:10px;"></select>
+                    <div id="grading-table-container"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <!-- ================= DASHBOARD MAHASISWA ================= -->
+    <div class="dashboard" id="dashboard-mhs">
+        <header class="top-app-bar">
+            <div class="top-bar-main">
+                <h1 style="color: var(--primary-dark); font-size: 20px;">LMS Pintar &bull; Portal Mahasiswa</h1>
+                <div class="user-info">
+                    <span id="mhs-display" style="font-weight: 600;"></span>
+                    <button class="logout-btn" onclick="handleLogout()">Keluar</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-layout">
+            <aside class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-item active" id="menu-mhs-kelas" onclick="switchMhsMenu('kelas')">🏫 Ruang Kelas Saya</li>
+                    <li class="sidebar-item" id="menu-mhs-kartu" onclick="switchMhsMenu('kartu')">🪪 Kartu Mahasiswa</li>
+                    <li class="sidebar-item" id="menu-mhs-krs" onclick="switchMhsMenu('krs')">🧾 Pengisian KRS</li>
+                    <li class="sidebar-item" id="menu-mhs-tugas" onclick="switchMhsMenu('tugas')">📤 Jawab Soal & Tugas</li>
+                    <li class="sidebar-item" id="menu-mhs-materi" onclick="switchMhsMenu('materi')">📚 Lihat Materi Kuliah</li>
+                    <li class="sidebar-item" id="menu-mhs-transkrip" onclick="switchMhsMenu('transkrip')">🎓 Transkrip Nilai</li>
+                    <li class="sidebar-item" id="menu-mhs-tagihan" onclick="switchMhsMenu('tagihan')">💳 Tagihan Keuangan</li>
+                </ul>
+            </aside>
+            <main class="content-area">
+                <div id="view-mhs-kelas">
+                    <h2>Pilih Kelas Anda untuk Masuk</h2>
+                    <div class="class-grid" id="mhs-class-list"></div>
+                    <div id="mhs-room-chat" style="display:none; margin-top: 20px;"></div>
+                </div>
+
+                <div id="view-mhs-kartu" style="display:none;">
+                    <h2>Kartu Mahasiswa Digital</h2><br>
+                    <div class="qr-scan-box">
+                        <h4 style="color:var(--primary-dark); font-size:13px; margin-bottom:10px; text-transform:uppercase;">QR Identitas Anda</h4>
+                        <div class="qr-frame" id="mhs-own-qr" style="font-size:12px;"></div>
+                    </div>
+
+                    <div class="qr-scan-box">
+                        <h4 style="color:var(--primary-dark); font-size:13px; margin-bottom:10px; text-transform:uppercase;">Presensi Kelas</h4>
+                        <div class="qr-frame">📷</div>
+                        <button class="absen-btn" id="qr-scan-btn" onclick="scanQRAbsen()">Pindai QR Code Kelas Dosen</button>
+                    </div>
+
+                    <div class="kartu-mhs-card" id="kartu-mhs-display"></div>
+                </div>
+
+                <div id="view-mhs-krs" style="display:none;">
+                    <h2>Pengisian KRS (Kartu Rencana Studi)</h2><br>
+                    <div class="krs-scroll-list" id="krs-scroll-list"></div>
+                    <div class="krs-footer-bar">
+                        <span id="krs-selected-count" style="font-weight:600; color:var(--primary-dark);">0 Mata Kuliah Dipilih</span>
+                        <button class="btn-submit" style="width:auto; margin:0; padding:10px 24px;" onclick="submitKrs()">Simpan KRS</button>
+                    </div>
+                </div>
+
+                <div id="view-mhs-tugas" style="display:none;">
+                    <h2>Daftar Soal & Tugas Dari Dosen</h2>
+                    <p style="font-size:13px; color:var(--text-light); margin-bottom:12px;">Klik tombol "Jawab Soal" untuk mengetik langsung atau mengunggah file jawaban Anda.</p>
+                    <div id="tugas-mhs-list"></div>
+                </div>
+
+                <div id="view-mhs-materi" style="display:none;">
+                    <h2>Materi Perkuliahan</h2>
+                    <p style="font-size:13px; color:var(--text-light); margin-bottom:12px;">Berikut adalah daftar materi perkuliahan aktif yang dikirim oleh dosen. Klik tombol "Buka Materi" untuk membaca detail materi.</p>
+                    <div id="materi-mhs-list"></div>
+                </div>
+
+                <div id="view-mhs-transkrip" style="display:none;">
+                    <h2>Transkrip Nilai</h2><br>
+                    <div class="transkrip-summary" id="transkrip-summary"></div>
+                    <div id="transkrip-table-container"></div>
+                </div>
+
+                <div id="view-mhs-tagihan" style="display:none;">
+                    <h2>Tagihan Keuangan</h2><br>
+                    <div class="tagihan-tabs">
+                        <button class="tagihan-tab-btn active" id="tab-belum-bayar" onclick="switchTagihanTab('belum')">Belum Dibayar</button>
+                        <button class="tagihan-tab-btn" id="tab-riwayat" onclick="switchTagihanTab('riwayat')">Riwayat Pembayaran</button>
+                    </div>
+                    <div id="tagihan-belum-container"></div>
+                    <div id="tagihan-riwayat-container" style="display:none;"></div>
+                </div>
+            </main>
+        </div>
+    </div>
